@@ -1,27 +1,36 @@
-Graphs are an important data structure used in computer science. The task is to load graphs and determine the following parameters:
+# Graph Analyzer
 
-1) The degree sequence;
-2) The number of components;
-3) Bipartiteness;
-4) The eccentricity of vertices (within the components)
-5) Planarity;
-6) Vertices colours (consecutive natural numbers from 1) obtained using algorithms:
-  a) greedy (the vertex order according to its number)
-  b) LF method (ties are solved by the vertex number)
-  c) SLF method (ties are solved by highest vertex degree, and if there is still a tie choose the vertex with the lowest number)
-7) The number of different C4 subgraphs
-8) The number of the graph complement's edges
+C++ tool for calculating structural properties and coloring parameters of undirected graphs.
 
+## 📋 Features
 
-Input
-In the first line there's a number k of graphs.
-The following lines contain k graph data sets.
-A single data set contains a number n - the graph order - and n lists of neighbours for each vertex. A list contains the number of neighbours (s) and s neighbours IDs.
-Neighbours IDs are numbers from 1 to n.
+The program computes the following for  graphs:
 
+1. **Degree Sequence**: Sorted list of vertex degrees.
+2. **Connectivity**: Number of connected components (via DFS).
+3. **Bipartiteness**: T/F check for 2-colorability.
+4. **Coloring Algorithms**:
+* **Greedy**: By vertex ID.
+* **LF (Largest First)**: By degree (descending).
+5. **Complement Edges**: Number of edges in the complement graph.
 
-Output
-You should print k sets of responses. Each set should contain the designated parameters in the order in which the parameters are listed. For point
-1, 4, 6a, 6b, 6c you should print sequence of n numbers;
-7, 8 you should print a number;
-2, 3, 5 you should print a character T or F (true/false).
+## 🛠 Implementation Details
+
+* ** Calculation**: Uses common neighbor counting between pairs: .
+* **SLF Logic**: Prioritizes vertices with the highest number of unique neighbor colors, then highest degree, then lowest ID.
+* **Performance**: Uses custom `Vector` and `Stack` classes for efficiency. Sorting is handled via **Merge Sort** ().
+
+## 📥 Input/Output
+
+* **Input**: Number of graphs , followed by  and adjacency lists.
+* **Output**: Values for all 8 parameters in order (sequences or T/F).
+
+## 🚀 Usage
+
+```bash
+g++ -O3 main.cpp -o analyzer
+./analyzer < input.txt
+
+```
+
+---
