@@ -2,7 +2,7 @@
 
 C++ tool for calculating structural properties and coloring parameters of undirected graphs.
 
-## 📋 Features
+##  Features
 
 The program computes the following for  graphs:
 
@@ -14,18 +14,18 @@ The program computes the following for  graphs:
 * **LF (Largest First)**: By degree (descending).
 5. **Complement Edges**: Number of edges in the complement graph.
 
-## 🛠 Implementation Details
+##  Implementation Details
 
 * ** Calculation**: Uses common neighbor counting between pairs: .
 * **SLF Logic**: Prioritizes vertices with the highest number of unique neighbor colors, then highest degree, then lowest ID.
 * **Performance**: Uses custom `Vector` and `Stack` classes for efficiency. Sorting is handled via **Merge Sort** ().
 
-## 📥 Input/Output
+## Input/Output
 
 * **Input**: Number of graphs , followed by  and adjacency lists.
 * **Output**: Values for all 8 parameters in order (sequences or T/F).
 
-## 🚀 Usage
+## Usage
 
 ```bash
 g++ -O3 main.cpp -o analyzer
